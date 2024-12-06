@@ -33,9 +33,20 @@ print(fib_dp1(6)) # 8
 # Test case #4
 print(fib_dp1(100)) # 354224848179261915075
 
+def fib_dp2(n):
+    dp= [0, 1]
+    for i in range(2, n+1):
+        dp.append(dp[i-1] + dp[i-2])
+    return dp[n]
+
+# Test case #5
+print(fib_dp2(6)) # 8
+
+# Test case #6
+print(fib_dp2(100)) # 354224848179261915075
 
 
-# Iterative approach O(1) space complexity
+# Iterative approach O(1) space complexity (Optional)
 def fib_iterative(n):
     if n < 2:
         return n
